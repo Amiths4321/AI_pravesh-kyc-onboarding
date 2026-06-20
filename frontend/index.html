@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pravesh — KYC Verification Queue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">PR</span>
+      <div class="brand-text">
+        <span class="brand-name">Pravesh</span>
+        <span class="brand-sub">KYC verification queue · demo instance</span>
+      </div>
+    </div>
+    <div class="topbar-right">
+      <label class="api-field">
+        <span>API base</span>
+        <input id="apiBase" type="text" value="http://127.0.0.1:8003" spellcheck="false" />
+      </label>
+      <span class="conn-status" id="connStatus"><i class="dot"></i> connecting</span>
+    </div>
+  </header>
+
+  <main class="layout">
+
+    <section class="queue-panel">
+      <div class="queue-head">
+        <h2>Applications</h2>
+        <select id="statusFilter">
+          <option value="PENDING">Pending</option>
+          <option value="VERIFIED">Verified</option>
+          <option value="REJECTED">Rejected</option>
+          <option value="ALL">All</option>
+        </select>
+      </div>
+      <div class="queue-list" id="queueList">
+        <p class="queue-empty">Loading…</p>
+      </div>
+    </section>
+
+    <section class="detail-panel-wrap">
+      <div class="detail-panel" id="detailPanel">
+        <div class="detail-empty"><p>Select an application from the queue to review it.</p></div>
+      </div>
+      <div class="stamp-overlay" id="stampOverlay" hidden></div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
